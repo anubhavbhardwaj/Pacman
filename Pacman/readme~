@@ -1,0 +1,47 @@
+Aim:
+We have implemented the interactive game of Pacman using the graphics library of Ocaml.
+
+How to run the program:
+1. In the ocaml terminal type---> #use "run.ml" ;;
+
+
+Functions:
+1. createDesign.ml 
+It contains the draw_rectangle function which is used for creating the obstacle and maze.
+
+2. createDots.ml
+It is used to design the dots which are stored in a list which are later used by putDots.ml to write dots on canvas .
+
+3. putPack.ml 
+3.1: init function initializes the canvas and draws the maze.
+3.2: run function is used to check the boundary conditions for pacman.
+3.3: checkbutton is used check the key pressed and accordingly move pacman.
+
+4. putMonsters.ml: It is used to place the monster on the canvas.
+
+5. putDots: It created the dots on the canvas for the pacman to eat.
+
+6. utility.ml: 
+6.1: find function checks whether the given tuple is there in the list or not.
+6.2: deleteAtIndex deletes the tuple from the given list at the given index
+
+7. libs.ml: It contains the Graphics and Unix library used in the program.
+
+8. run.ml: It draws the canvas and runs the program using all he files.
+
+User Instructions:
+1. The color of pacman is Blue.
+2. The color of Monsters is Red.
+3. The color of dots is Yellow.	
+4. To move the pacman following keys are used:
+		^
+		|		
+		w
+	   <--a   s--> 
+		s
+		|
+		v
+5. The game gets over if all the dots are over or pacman gets eaten up by the monster and prints user wins or loses accordingly.
+		 
+
+	
