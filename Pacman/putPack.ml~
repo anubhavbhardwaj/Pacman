@@ -1,0 +1,42 @@
+let player = [|40;80;10|]
+
+let init () = 
+	Graphics.clear_graph ();
+	draw_rectangle 160 60 50 70;
+	(*draw_rectangle 460 60 50 70;
+	draw_rectangle 290 40 100 20;
+	draw_rectangle 290 130 100 20;
+	draw_rectangle 600 70 20 100;
+	draw_rectangle 70 70 20 100;*)
+	Graphics.fill_circle player.(0) player.(1) player.(2)
+
+let check button = 
+	match button with
+	'w' -> (player.(1) <- player.(1) + 20)
+	|'s' -> (player.(1) <- player.(1) - 20)
+	|'a' -> (player.(0) <- player.(0) - 20)
+	|'d' -> (player.(0) <- player.(0) + 20)
+	
+	
+
+let run () = 
+  while true do
+    let s = Graphics.wait_next_event [
+        Graphics.Button_down;
+        Graphics.Key_pressed
+      ] in
+    let bo = Graphics.key_pressed () in
+    if not bo then check s.Graphics.key;
+	if (player.(0) > 800) then (player.(0) <- 795); 
+	if (player.(0) < 0) then (player.(0) <- 5); 
+	if (player.(1) < 0) then (player.(1) <- 5);
+	if (player.(1) > 250) then (player.(1) <- 245); 
+	if (player.(0) > 160 && player.(1)>60 && player.(1)<130 && player.(0) < 210) then (if(player.(0)>160 then player.(0) <- 160) else if 		(player.(0) < 210) then player.(0) <-210 else if (player.(1) > 60) then player.(1) <- 60 else player.(1) <- 130)); 
+	init()  
+	
+  done
+
+
+let () =
+  init ();
+  run ()

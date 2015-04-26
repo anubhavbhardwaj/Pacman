@@ -1,0 +1,6 @@
+let handle_char c = match c with
+| 'w' -> change 1
+| 's' -> change 2
+| 'n' -> change 3
+| 'm' -> change 4
+| _ -> ();;

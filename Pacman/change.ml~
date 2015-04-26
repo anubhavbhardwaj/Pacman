@@ -1,0 +1,7 @@
+let change x =
+match x with
+| 1 -> shiftd (-40)
+| 2 -> shiftd (40)
+| 3 -> shiftu (-40)
+| 4 -> shiftu (40)
+| _ -> ();;
